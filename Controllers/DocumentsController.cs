@@ -18,17 +18,17 @@ namespace _2021_06_21_FreesyleChaosSpielerei.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-
-        // GET: Documents
-        //public async Task<IActionResult> Index()
+        //public IActionResult Index()
         //{
-        //    return View(await _context.Document.ToListAsync());
+        //    return View();
         //}
+
+
+        //GET: Documents
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Document.ToListAsync());
+        }
 
         // GET: Documents/Details/5
         public async Task<IActionResult> Details(int? id)
